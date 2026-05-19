@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "env-drift-report"
-version = "0.1.0"
+version = "0.2.0"
 description = "Compare dotenv files and report configuration drift."
 readme = "README.md"
 requires-python = ">=3.9"

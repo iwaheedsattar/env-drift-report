@@ -40,6 +40,12 @@ Emit JSON for scripts:
 env-drift-report --reference .env.example --format json .env
 ```
 
+Write an HTML report for CI artifacts or onboarding handoff:
+
+```bash
+env-drift-report --reference .env.example --format html --output env-report.html .env .env.local.example
+```
+
 Ignore target-only keys when local files are expected to contain private values:
 
 ```bash
@@ -57,6 +63,10 @@ The command exits with:
 - `0` when every target file passes
 - `1` when drift is found
 - `2` when a file cannot be read
+
+## Report Formats
+
+`text` is optimized for terminal use, `json` is stable for scripts, and `html` creates a self-contained report that can be uploaded as a build artifact or shared during setup reviews.
 
 ## Python Usage
 
@@ -107,7 +117,7 @@ PYTHONPATH=src python3 -m unittest discover -s tests
 Build the package:
 
 ```bash
-python3 -m build
+python3 -m build --no-isolation
 ```
 
 ## Contributing
